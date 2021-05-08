@@ -1,0 +1,87 @@
+Algorithms:-
+
+MULTIVARIABLE LINEAR REGRESSION
+
+POLYNOMIAL REGRESSION
+
+SUPPORT VECTOR REGRESSION
+
+RANDOM FOREST
+
+MULTI LAYER PERCEPTRON NEURAL NETWORK
+
+LSTM NEURAL NETWORK
+
+==================================================================
+Introduction:-
+Air pollution is one of the primary problems that were born out of industrialization and modernization. With the rapid growth of urbanization and industrialization, many cities are suffering from heavy air pollution. Mumbai, one of the major metropolitan cities in India, has been suffering from this issue for over a decade. The problem of falling air quality especially during the winter season has intensified over the last few years and hence an analysis of the problem and implementation of proper prediction systems has gained great importance at this time for the protection of people and the improvement of the air quality in India.
+
+==================================================================
+Methodology:-
+Air quality is measured with the help of AQI (Air Quality Index). Depending on this value of AQI the air quality can be classified as hazardous, unhealthy, good etc. AQI is calculated on a daily basis taking the maximum value from the sub index values of each air pollutant calculated independently. Depending on the data availability we have chosen three air quality parameters (PM10 , NO2 , SO2) and six meteorological parameters (Air temperature, Pressure station level,Relative humidity, Horizontal visibility, Dew point temperature, Mean Wind Speed).We have implemented different machine learning algorithms to comparatively study the trends in each of the air quality parameters and have taken the final models for each parameter based on their optimum performances. The meteorological parameters are our input/independent variables and air quality parameters are our output/dependent variables. As we are dealing with continuous data, our problem is regression problem. The algorithms we have implemented include multivariable linear regression, polynomial regression, support vector regression, decision tree, random forest. We have chosen four metrics to evaluate our models which are mean absolute error, mean squared error, root mean squared error and r2 score. We have also calculated the accuracy of a model by finding out the percentage of predictions having less than 20% error from a series of predictions on the test data. To get better accuracy we have introduced some artificial parameters like Day no. (1-365 or 366), previous day’s parameter values etc. Correlation matrix was used to get the better understanding of AQI and its dependency on air quality parameters. Examining different plots and the correlation matrix, we have found that AQI value is most heavily affected by PM10, followed by NO2 and then SO2. We have examined the air quality trends from the plots to arrive at some predictive conclusions like which parameter will have less impact in near future etc.
+
+==================================================================
+Dataset Splitting:-
+The entire dataset contains 2372 records and the ratio of splitting the entire dataset into training and testing set has been taken as 4:1.As we are dealing with time series data and our prediction on a particular day depends on the result of previous day, dataset has been split into two sequential blocks instead of random splitting.
+
+==================================================================
+MODELS
+MULTIVARIABLE LINEAR REGRESSION
+The goal of multiple linear regression (MLR) is to model the linear relationship between the independent variables and dependent variable. MLR examines how multiple independent variables are related to one dependent variable. In our case independent variables are Air Temperature, Pressure Station Level, Relative Humidity etc and dependent variables are PM10 NO2 and SO2.
+
+==================================================================
+POLYNOMIAL REGRESSION
+Polynomial Regression is a form of linear regression in which the relationship between the independent variable x and dependent variable y is modeled as an nth degree polynomial. Polynomial regression fits a nonlinear relationship between the value of x and the corresponding conditional mean of y.
+
+==================================================================
+SUPPORT VECTOR REGRESSION
+The Support Vector Regression (SVR) uses the same principles as the SVM for classification, with only a few minor differences. First of all, because output is a real number it becomes very difficult to predict the information at hand, which has infinite possibilities. In the case of regression, a margin of tolerance (epsilon) is set in approximation to the SVM which would have already requested from the problem. But besides this fact, there is also a more complicated reason, the algorithm is more complicated therefore to be taken in consideration. However, the main idea is always the same: to minimize error, individualizing the hyperplane which maximizes the margin, keeping in mind that part of the error is tolerated.
+
+==================================================================
+RANDOM FOREST
+The random forest is a model made up of many decision trees.When training, each tree in a random forest learns from a random sample of the data points.The idea is that by training each tree on different samples, although each tree might have high variance with respect to a particular set of the training data, overall, the entire forest will have lower variance but not at the cost of increasing the bias.
+
+==================================================================
+MULTI LAYER PERCEPTRON NEURAL NETWORK
+A perceptron is a network with two layers, one input and one output. Artificial neural network, which has input layer, output layer, and two or more hidden layers is called multilayer perceptron or MLP.It is a class of feedforward artificial neural network (ANN). MLP utilizes backpropagation for training and learns and updates weights for improvements.
+
+==================================================================
+LSTM NEURAL NETWORK
+LSTM was initially proposed for language models and was well-known for its excellent ability to memorize long-term dependencies. However, due to its complex structure, the solution to LSTM NNs usually takes long time.The LSTM mitigates vanishing gradient problem via input, forget, and output gates; the input gate regulates how much of the new cell state to keep, the forget gate regulates how much of the existing memory to forget, and the output gate regulates how much of the cell state should be exposed to the next layers of the network.
+
+==================================================================
+EVALUATION MATRICES
+Errors in machine learning models help to choose better model among different models.It reflects effectiveness of an individual model over others.We have chosen three main matrices to evaluate our models. a) Mean Absolute Error(MAE) b) Mean Squared Error(MSE) c) Root Mean Squared Error(RMSE). Except these, We have also used d) R2 score and e) Accuracy(This one we have defined on our own considering only those predictions which have less than 20% error)
+
+==================================================================
+TEST RESULT
+PM10
+Model names				Mean Absolute Error	Mean Squared Error	Root Mean Squared Error		R2 Score	Accuracy(<20% error)
+Multi-variable linear regression	16.528			511.257			22.611				0.914		65.61%
+Polynomial Regression			14.276			369.562			19.224				0.938		72.15%
+Support vector regression		15.473			475.763			21.812				0.92		75.1%
+Random forest regression		15.805			490.259			22.142				0.9176		72.99%
+Multi layer perceptron			13.446			376.514			19.404				0.9367		74.73%
+LSTM					14.769			386.02			19.647				0.9354		72.19%
+
+
+==================================================================
+NO2
+Model names				Mean Absolute Error	Mean Squared Error	Root Mean Squared Error		R2 Score	Accuracy(<20% error)
+Multi-variable linear regression	4.472			34.621			5.884				0.862		84.81%
+Polynomial Regression			4.104			31.364			5.6				0.875		89.87%
+Support vector regression		4.143			31.427			5.606				0.874		89.03%
+Random forest regression		4.301			35.772			5.981				0.857		88.39%
+Multi layer perceptron			4.009			29.612			5.442				0.883		88.74%
+LSTM					4.001			31.039			5.571				0.877		90.87%
+
+==================================================================
+SO2
+Model names				Mean Absolute Error	Mean Squared Error	Root Mean Squared Error		R2 Score	Accuracy(<20% error)
+Multi-variable linear regression	1.299			2.608			1.615				0.775		49.58%
+Polynomial Regression			1.174			2.602			1.613				0.776		60.55%
+Support vector regression		1.102			2.262			1.504				0.805		59.49%
+Random forest regression		1.365			3.361			1.833				0.71		52.11%
+Multi layer perceptron			1.196			2.527			1.589				0.784		56.26%
+LSTM					1.191			2.489			1.578				0.787		57.32%
+

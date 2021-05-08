@@ -1,0 +1,420 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style2.css' %}">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"
+    integrity="sha256-eBPyH/yKtanEgIozyunmI0tKs7FCRaiQC91ih5ZCB3w=" crossorigin="anonymous"></script>
+  <style type="text/css">
+    footer a {
+      color: #fff;
+    }
+
+    footer a:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    footer p {
+      color: #fff;
+    }
+
+    .ml11 {
+      font-weight: 500;
+      font-size: 2.5em;
+    }
+
+    .ml11 .text-wrapper {
+      position: relative;
+      display: inline-block;
+      padding-top: 0.1em;
+      padding-right: 0.05em;
+      padding-bottom: 0.15em;
+    }
+
+    .ml11 .line {
+      opacity: 0;
+      position: absolute;
+      left: 0;
+      height: 100%;
+      width: 3px;
+      background-color: #fff;
+      transform-origin: 0 50%;
+    }
+
+    .ml11 .line1 {
+      top: 0;
+      left: 0;
+    }
+
+    .ml11 .letter {
+      display: inline-block;
+      line-height: 1em;
+    }
+
+    .customize {
+      color: white;
+      padding: 10px;
+    }
+
+    .social-link a i {
+      transition: 0.8s;
+    }
+
+    .social-link a i:hover {
+      transform: rotateY(360deg);
+
+    }
+
+    .navbar-toggler {
+      background-color: rgba(238, 241, 242, 0.819607843137);
+      border: 1px solid transparent !important;
+      border-radius: .25rem !important;
+    }
+
+    img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 20px 0 rgba(37, 43, 54, 0.6);
+      height: 70px;
+      border-radius: 50%;
+      transition: 0.8s;
+      margin-bottom: 3px;
+    }
+
+    img:hover {
+      transform: rotateY(360deg);
+    }
+
+    .navi-bar h4 {
+      letter-spacing: 0.2rem;
+      margin-top: 5px;
+      font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif !important;
+      font-weight: bold;
+
+    }
+
+
+    .desc {
+      font-family: "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif !important;
+      font-weight: bold;
+    }
+  </style>
+  <title>Vaayu</title>
+</head>
+
+<body>
+<style>
+  *{
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+a{
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: none;
+}
+li{
+	list-style: none;
+}
+
+p{
+	font-size: 0.9rem;
+	line-height: 1.6;
+	font-weight: 500;
+	color: #404040;
+}
+
+.extra-div h2{
+	font-size: 0.9rem;
+	margin: 20px 0 15px 0;
+	font-weight: bold;
+	line-height: 1.1;
+	word-spacing: 4px;
+}
+.header{
+	width: 100%;
+	height: 100vh;
+	background-image:linear-gradient(rgba(0,168,255,0.3), rgba(0,168,255,0.3)), url('../images/AirPollution.jpg');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	clip-path: polygon(100% 0%, 100% 77%, 50% 100%, 0 75%, 0 0);
+	position: relative;
+}
+.header:before{
+	content: "";
+	position: absolute;
+	top: 0%;
+	bottom: 0%;
+	left: 0;
+	right: 0;
+	opacity: 0.1;
+	z-index: -1;
+	background: linear-gradient(to right, #1e5799 0%, #3ccdbb 0%, #16c9f6 100%);
+}
+
+ .navbar:before{
+ 	content: "";
+ 	position: absolute;
+ 	top: 0%;
+ 	bottom: 0%;
+ 	left: 0;
+ 	right: 0;
+ 	opacity: 0.1;
+ 	z-index: -1;
+ 	background: linear-gradient(to right, #1e5799 0%, #3ccdbb 0%, #16c9f6 100%);
+ }
+ .nav-item a{
+ 	color: #fff!important;
+ 	font-weight: bold;
+ }
+ .header-section{
+ 	width: 100%;
+ 	height: inherit;
+ 	color: white;
+ 	text-align: center;
+ 	position: relative;
+ }
+ .center-div{
+ 	width: 100%;
+ 	height: auto;
+ 	position: absolute;
+ 	top: 50%;
+ 	left: 50%;
+ 	transform: translate(-50%, -50%);
+ 	-ms-transform: translate(-50%, -50%);
+ 	-webkit-transform: translate(-50%, -50%);
+ }
+ .header-buttons a{
+ 	border: 1px solid #fff;
+ 	border-radius: 100px;
+ 	margin: 0 5px;
+ 	padding: 12px 35px;
+ 	outline: none;
+ 	color: #fff;
+ 	font-size: 1rem;
+ 	font-weight: 400;
+ 	line-height: 1.4;
+ 	text-align: center;
+ }
+ .header-buttons a:hover{
+ 	color: #50d1c0;
+ 	background: #fff;
+ 	text-decoration: none;
+ 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+ }
+ .center-div p{
+ 	font-size: 1.3rem;
+ 	padding: 10px 0 20px 0;
+ 	color: white;
+ }
+ .header-extradiv{
+ 	width: 100%;
+ 	height: auto;
+ 	margin: 100px 0;
+ 	text-align: center;
+ }
+ .extra-div{
+ 	background: #fff;
+ 	border: medium none;
+ 	padding: 50px!important;
+ 	border-radius: 3px;
+ 	transition: 0.3s;
+ }
+ .extra-div:hover{
+ 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+ 	transform: translateY(-20px);
+
+ }
+</style>
+
+  <div class="header" id="topheader">
+    <nav class="navbar navbar-expand-md fixed-top">
+      <div class="container text-uppercase p-2">
+        <a class="navbar-brand font-weight-bold text-white" href="#">
+          <div class="navi-bar">
+            <h4>Vaayu</h4>
+          </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto ">
+            <li class="nav-item active">
+              <a class="nav-link " href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/docs">Documentation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/prediction">Prediction</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/plots">Plots</a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+    <section class="header-section">
+      <div class="center-div">
+        <h1 class="ml11 font-weight-bold">
+          <span class="text-wrapper">
+            <span class="line line1"></span>
+            <span class="letters">For a Breath of Fresh Air</span>
+          </span>
+        </h1>
+        <p class="desc">
+          We analyze and predict the ambient air quality standards with the help of AQI using machine learning
+          algorithms.
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <!-- *******************************Three extra div starts********************************** -->
+
+  <section class="header-extradiv">
+    <div class="container">
+      <h2 style="text-align: center;">Our Team</h2>
+      <div class="row">
+        <div class=" extra-div col-lg-4 col-md-4 col-12">
+          <h2>Chirag Sharma</h2>
+          <p style="text-align: center;">
+            T.E. Comps B
+          </p>
+        </div>
+
+        <div class=" extra-div col-lg-4 col-md-4 col-12">
+          <h2>Gargi Kulkarni</h2>
+          <p style="text-align: center;">
+            T.E. Comps B
+          </p>
+        </div>
+
+        <div class=" extra-div col-lg-4 col-md-4 col-12">
+          <h2>Gayatri Kulkarni</h2>
+          <p style="text-align: center;">
+            T.E. Comps B
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- *******************************Three extra div ends********************************** -->
+
+
+
+  <!-- Footer -->
+
+  <footer class="bg-dark text-white">
+    <div class="container-fluid p-4">
+      <div class="row">
+        <div class="col-lg-4 pb-2">
+          <h4>
+            About Us
+          </h4>
+          <p>
+            We are CS UG Students <br> from SJCEM Palghar.
+          </p>
+        </div>
+        <div class="col-lg-4 pb-2">
+          <h4>
+            Important links
+          </h4>
+          <ul class="list-unstyled">
+            <li><a href="/index">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/prediction">Prediction</a></li>
+            <li><a href="/plots">Plots</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 pb-2">
+          <h4>Contact Us</h4>
+          <p>
+            <address>
+              SJCEM, Palghar
+            </address>
+            <strong>Email : </strong><a href="mailto:chiragats3@gmail.com">chiragats3@gmail.com</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid text-center bg-secondary py-2">
+      &copy; 2021. All rights are reserved.
+    </div>
+  </footer>
+
+  <script type="text/javascript">
+    // Wrap every letter in a span
+    var textWrapper = document.querySelector('.ml11 .letters');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+
+    anime.timeline({ loop: true })
+      .add({
+        targets: '.ml11 .line',
+        scaleY: [0, 1],
+        opacity: [0.5, 1],
+        easing: "easeOutExpo",
+        duration: 700
+      })
+      .add({
+        targets: '.ml11 .line',
+        translateX: [0, document.querySelector('.ml11 .letters').getBoundingClientRect().width + 10],
+        easing: "easeOutExpo",
+        duration: 700,
+        delay: 100
+      }).add({
+        targets: '.ml11 .letter',
+        opacity: [0, 1],
+        easing: "easeOutExpo",
+        duration: 600,
+        offset: '-=775',
+        delay: (el, i) => 34 * (i + 1)
+      }).add({
+        targets: '.ml11',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+      });
+  </script>
+
+  <!-- Footer ends -->
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
