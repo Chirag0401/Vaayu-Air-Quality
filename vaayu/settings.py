@@ -125,3 +125,5 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
 django_heroku.settings(locals())
+
+DISABLE_COLLECTSTATIC = True
